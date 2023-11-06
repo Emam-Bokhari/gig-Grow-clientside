@@ -1,15 +1,8 @@
-
-import { useLoaderData } from "react-router-dom";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
 import Banner from "./Banner";
-import Category from "./Category";
-
-
+import Jobs from "./Jobs";
 
 const Home = () => {
-
-    const data=useLoaderData()
-    console.log(data);
 
     return (
         <div>
@@ -23,13 +16,10 @@ const Home = () => {
                 <Banner />
             </div>
 
-            <div className="my-10  border-2 border-red-500" >
-                <Category categoryData={data} />
+            {/* jobs */}
+            <div>
+                <Jobs />
             </div>
-
-            
-
-
 
         </div>
     );

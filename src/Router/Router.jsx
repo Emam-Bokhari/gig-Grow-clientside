@@ -16,7 +16,6 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader:()=>fetch("http://localhost:3000/api/v1/job-category"),
                 element: <Home />
             },
             {
