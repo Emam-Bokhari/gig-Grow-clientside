@@ -12,7 +12,7 @@ const Home = () => {
             </div>
 
             {/* Banner */}
-            <div className="border-2 border-red-500" >
+            <div>
                 <Banner />
             </div>
 
