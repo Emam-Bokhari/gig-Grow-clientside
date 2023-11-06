@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+
 const JobCard = ({ data }) => {
-    console.log(data);
-    const { jobTitle, deadline, minimumPrice, maximumPrice, description } = data || {}
+    // console.log(data);
+    const {_id, jobTitle, deadline, minimumPrice, maximumPrice, description } = data || {}
+
+    
     return (
         <div className="flex flex-grow"> {/* Add the flex-grow class here */}
 
@@ -24,7 +28,9 @@ const JobCard = ({ data }) => {
 
                 {/* button */}
                 <div>
-                    <button className="bg-[#092eed] text-white font-medium px-4 text-base py-2 rounded" >Bid Now</button>
+                   <Link to={`/jobDetails/${_id}`} >
+                   <button className="bg-[#092eed] text-white font-medium px-4 text-base py-2 rounded" >Bid Now</button>
+                   </Link>
                 </div>
 
             </div>
