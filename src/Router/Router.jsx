@@ -7,6 +7,7 @@ import BidRequest from './../pages/BidRequest/BidRequest';
 import MyBids from './../pages/MyBids/MyBids';
 import Login from './../pages/Login/Login';
 import Register from './../pages/Register/Register';
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -15,11 +16,12 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                loader:()=>fetch("http://localhost:3000/api/v1/job-category"),
                 element: <Home />
             },
             {
                 path: "/addJob",
-                element: <AddJob />
+                element: <PrivateRoute><AddJob /></PrivateRoute>
             },
             {
                 path: "/myPostedJobs",
