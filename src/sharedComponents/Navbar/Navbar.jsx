@@ -1,5 +1,5 @@
 import { BiMenu } from "react-icons/bi"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -62,21 +62,63 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex gap-5 text-[14px] md:text-base text-[#5c5776] font-normal" >
-                        <li><Link to="/" >Home</Link></li>
+                        <li><NavLink
+                            to="/"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#553cfb] underline" : ""
+                            }
+                        >
+                            Home
+                        </NavLink></li>
 
-                        <li><Link to="/addJob" >Add Job</Link></li>
+                        <li><NavLink
+                            to="/addJob"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#553cfb] underline" : ""
+                            }
+                        >
+                            Add Job
+                        </NavLink></li>
 
-                        <li><Link to="/myPostedJobs" >My Posted Jobs</Link></li>
+                        <li><NavLink
+                            to="/myPostedJobs"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#553cfb] underline" : ""
+                            }
+                        >
+                            My Posted Jobs
+                        </NavLink></li>
 
-                        <li><Link to="/bidRequest" >Bid Request</Link></li>
+                        <li><NavLink
+                            to="/bidRequest"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#553cfb] underline" : ""
+                            }
+                        >
+                            Bid Request
+                        </NavLink></li>
 
-                        <li><Link to="/myBids" >My Bids</Link></li>
+                        <li><NavLink
+                            to="/myBids"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#553cfb] underline" : ""
+                            }
+                        >
+                            My Bids
+                        </NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {/* login and register button (conditionally) */}
-                    <div>
+                    <div className="flex flex-row-reverse gap-2" >
+                        <Link to="/login" >
                         <button className="bg-green-500 px-3 py-1 rounded" >Login</button>
+                        </Link>
+
+                        <div className="border-2 border-red-500 w-8 h-8 rounded-full" >
+                            <p>.</p>
+                        </div>
+
                     </div>
 
                 </div>
