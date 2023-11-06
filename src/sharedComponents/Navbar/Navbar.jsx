@@ -1,40 +1,27 @@
+import { useContext } from "react";
+import toast from "react-hot-toast";
 import { BiMenu } from "react-icons/bi"
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext)
+
+    // logout functionality
+    const handleLogout = () => {
+
+        logout()
+            .then(() => {
+                return toast.success('Logout Successful!');
+            })
+            .catch((error) => {
+                return toast.error(error.message);
+            })
+    }
+
     return (
         <div>
-            {/* <nav className="flex justify-between items-center" > */}
 
-
-
-
-            {/* navlink */}
-            {/* <div>
-                    <ul className="flex gap-5 text-[14px] md:text-base text-[#5c5776] font-normal" >
-                        <li><Link to="/" >Home</Link></li>
-
-                        <li><Link to="/addJob" >Add Job</Link></li>
-
-                        <li><Link to="myPostedJobs" >My Posted Jobs</Link></li>
-
-                        <li><Link to="bidRequest" >Bid Request</Link></li>
-
-                        <li><Link to="myBids" >My Bids</Link></li>
-                    </ul>
-                </div> */}
-
-
-            {/* login and register button (conditionally) */}
-            {/* <div>
-                    <button className="bg-green-500 px-3 py-1 rounded" >Login</button>
-                </div>
-
-
-            </nav> */}
-
-
-            {/* daisyui */}
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -110,16 +97,21 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {/* login and register button (conditionally) */}
-                    <div className="flex flex-row-reverse gap-2" >
-                        <Link to="/login" >
-                        <button className="bg-green-500 px-3 py-1 rounded" >Login</button>
-                        </Link>
 
-                        <div className="border-2 border-red-500 w-8 h-8 rounded-full" >
-                            <p>.</p>
+                    <div>
+
+                        {user ? <div>
+                                <button onClick={handleLogout} className="bg-green-500 px-3 py-1 rounded" >Logout</button>
                         </div>
+                            :
+                            <div>
+                                <Link to="/login" >
+                                    <button className="bg-green-500 px-3 py-1 rounded" >Login</button>
+                                </Link>
+                            </div>}
 
                     </div>
+
 
                 </div>
             </div>
