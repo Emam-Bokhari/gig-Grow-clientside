@@ -25,7 +25,7 @@ const AddJob = () => {
         // reset form
         form.reset()
 
-        console.log(addJob);
+        // console.log(addJob);
 
         axios.post("http://localhost:3000/api/v1/add-job",addJob)
         .then(result=>{

@@ -9,7 +9,7 @@ const JobCard = ({ data }) => {
         <div className="flex flex-grow"> {/* Add the flex-grow class here */}
 
             <div className="p-4 border-[1px] border-[#aabbd0] space-y-3 rounded flex-grow"> {/* Apply flex-grow class here too */}
-                <h2 className="text-2xl  font-bold text-[2a2a2a] h-[70px] lg:h-min border-2 border-red-500" >{jobTitle}</h2>
+                <h2 className="text-2xl  font-bold text-[2a2a2a] h-[70px]  border-2 border-red-500" >{jobTitle}</h2>
 
                 <div className="flex justify-between" >
                     <p className="text-base font-medium text-[#2a2a2a]" >Min Price: ${minimumPrice}</p>

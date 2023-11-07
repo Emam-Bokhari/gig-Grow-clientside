@@ -23,7 +23,7 @@ const Router = createBrowserRouter([
             {
                 path: "/jobDetails/:id",
                 loader: ({ params }) => fetch(`http://localhost:3000/api/v1/${params.id}/job-details`),
-                element: <JobDetails />
+                element:<PrivateRoute> <JobDetails /></PrivateRoute>
             },
             {
                 path: "/addJob",
@@ -31,7 +31,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/myPostedJobs",
-                element: <MyPostedJobs />
+                element: <PrivateRoute><MyPostedJobs /></PrivateRoute>
             },
             {
                 path: "/update/:id",
@@ -40,11 +40,11 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/bidRequest",
-                element: <BidRequest />
+                element: <PrivateRoute><BidRequest /></PrivateRoute>
             },
             {
                 path: "/myBids",
-                element: <MyBids />
+                element: <PrivateRoute><MyBids /></PrivateRoute>
             },
             {
                 path: "/login",

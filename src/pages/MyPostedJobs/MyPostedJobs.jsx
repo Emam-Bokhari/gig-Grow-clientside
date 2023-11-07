@@ -14,12 +14,13 @@ const MyPostedJobs = () => {
     useEffect(()=>{
         axios.get(url)
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             setMyPostedJobs(res.data)
         })
     },[url])
-    console.log(myPostedJobs);
+    // console.log(myPostedJobs);
 
+    
     
     
 
@@ -52,7 +53,7 @@ const MyPostedJobs = () => {
           </div>
 
 {myPostedJobs.length>0?<div>
-{myPostedJobs?.map((item,index)=><MyPostedJobTable key={index} data={item} index={index+1}   />)}
+{myPostedJobs?.map((item,index)=><MyPostedJobTable key={index} data={item} index={index+1}  />)}
 </div>:<div className="flex justify-center my-20 font-medium text-base md:text-lg" >
 <h2>You have not posted any jobs</h2>
 </div>}
