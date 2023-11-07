@@ -13,12 +13,12 @@ const MyBids = () => {
     useEffect(() => {
         axios.get(url)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setBids(res.data)
             })
     }, [url])
 
-    console.log(bids);
+    // console.log(bids);
 
     return (
         <div>

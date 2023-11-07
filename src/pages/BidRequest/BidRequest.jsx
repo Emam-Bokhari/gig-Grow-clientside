@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
+import BidRequestTable from "./BidRequestTable";
 
 const BidRequest = () => {
     const {user}=useContext(AuthContext)
@@ -27,7 +28,39 @@ const BidRequest = () => {
             <Navbar />
             </div>
 
-            <h2>Bid Request</h2>
+
+            <div className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10" >
+
+
+
+{bidRequest.length > 0 ? <div className="grid  grid-cols-6 bg-[#f2f3f3] text-[#7e858b] font-medium rounded text-center items-center overflow-x-scroll md:overflow-hidden gap-20 md:gap-0 " >
+
+    <div className="py-3 px-6 ">
+        <p >NO</p>
+    </div>
+    <div className="py-3 px-6">
+        <p >Job Title</p>
+    </div>
+
+    <div >
+        <p >Applicants Email</p>
+    </div>
+    <p className="py-3 px-6">Price</p>
+    <p className="py-3 px-6">Deadline</p>
+    <p className="py-3 px-6">Status</p>
+</div> : ""}
+
+
+{bidRequest.length > 0 ? <div>
+    {bidRequest?.map((item, index) => <BidRequestTable key={index} data={item} index={index + 1} />)}
+</div> : <div className="flex justify-center my-20 font-medium text-base md:text-lg" >
+    <h2>You have not bid on any job</h2>
+</div>}
+
+
+</div>
+
+
         </div>
     );
 };
