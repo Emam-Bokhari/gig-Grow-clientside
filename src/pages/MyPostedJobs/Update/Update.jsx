@@ -1,12 +1,12 @@
-import { useLoaderData} from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../../sharedComponents/Navbar/Navbar";
 import axios from "axios";
-
+import toast from "react-hot-toast";
 
 const Update = () => {
     const updatePostedJobData = useLoaderData()
     // console.log(updatePostedJobData);
-
+const navigate=useNavigate()
     const {_id,email,jobTitle,category,deadline,minimumPrice,maximumPrice,description}=updatePostedJobData||{}
 
 
@@ -28,7 +28,10 @@ const Update = () => {
         axios.patch(`http://localhost:3000/api/v1/${_id}/update-posted-job`,updatePostedJob)
         .then(result=>{
             console.log(result.data);
-            
+            if(result.data.modifiedCount>0){
+                toast.success('Updated Successfully!')
+                navigate("/myPostedJobs")
+            }
         })
 
     }
