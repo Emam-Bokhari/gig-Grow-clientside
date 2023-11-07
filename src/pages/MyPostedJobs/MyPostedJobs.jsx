@@ -20,7 +20,10 @@ const MyPostedJobs = () => {
     },[url])
     // console.log(myPostedJobs);
 
-    
+    const handleDeletePostedJob=(jobId)=>{
+        const updatedJobPost=myPostedJobs.filter(item=>item._id!==jobId)
+        setMyPostedJobs(updatedJobPost)
+    }
     
     
 
@@ -53,7 +56,7 @@ const MyPostedJobs = () => {
           </div>
 
 {myPostedJobs.length>0?<div>
-{myPostedJobs?.map((item,index)=><MyPostedJobTable key={index} data={item} index={index+1}  />)}
+{myPostedJobs?.map((item,index)=><MyPostedJobTable key={index} data={item} index={index+1} handleDeletePostedJob={handleDeletePostedJob}  />)}
 </div>:<div className="flex justify-center my-20 font-medium text-base md:text-lg" >
 <h2>You have not posted any jobs</h2>
 </div>}

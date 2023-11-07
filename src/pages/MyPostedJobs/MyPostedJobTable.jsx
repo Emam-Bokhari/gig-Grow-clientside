@@ -2,7 +2,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyPostedJobTable = ({ data, index}) => {
+const MyPostedJobTable = ({ data, index,handleDeletePostedJob }) => {
     // console.log(data);
     const { _id, jobTitle, minimumPrice, maximumPrice } = data || {}
 
@@ -34,7 +34,7 @@ const MyPostedJobTable = ({ data, index}) => {
                             'success'
 
                         )
-                        
+                        handleDeletePostedJob(_id)
                     }
 
 
