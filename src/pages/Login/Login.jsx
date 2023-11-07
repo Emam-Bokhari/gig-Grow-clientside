@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
 // import {FcGoogle} from "react-icons/fc"
 import { useContext } from "react";
@@ -9,7 +9,7 @@ const Login = () => {
 
     const { signin } = useContext(AuthContext)
     const navigate = useNavigate()
-
+    const location=useLocation()
     const handleSignin = (event) => {
         event.preventDefault()
         const form = event.target
@@ -20,7 +20,7 @@ const Login = () => {
         // siginin with email and password
         signin(email, password)
         .then(() => {
-            navigate("/")
+            navigate(location?.state?location.state:"/")
             return toast.success('Login Successfull!')
 
         })

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
 import { FcGoogle } from "react-icons/fc"
 import { useContext } from "react";
@@ -8,6 +8,7 @@ const Register = () => {
 
     const { createUser,googleSignin  } = useContext(AuthContext)
     const navigate = useNavigate()
+    const location=useLocation()
 
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -35,7 +36,7 @@ const Register = () => {
         // create user with email and password
         createUser(email, password)
             .then(() => {
-                navigate("/")
+                navigate(location?.state?location.state:"/")
                 return toast.success('Your account has been created successfully!')
             })
             .catch((error) => {
@@ -47,7 +48,7 @@ const Register = () => {
         const handleGoogleSignin = () => {
             googleSignin()
                 .then(() => {
-                    navigate("/")
+                    navigate(location?.state?location.state:"/")
                     return toast.success('Login Successful by Google')
     
                 })

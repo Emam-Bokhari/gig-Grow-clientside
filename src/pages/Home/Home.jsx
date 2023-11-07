@@ -3,6 +3,7 @@ import Navbar from "../../sharedComponents/Navbar/Navbar";
 import Banner from "./Banner";
 import FindGreatWork from "./FindGreatWork";
 import Jobs from "./Jobs";
+import NeedSomethingDone from "./NeedSomethingDone";
 
 const Home = () => {
 
@@ -16,6 +17,11 @@ const Home = () => {
             {/* Banner */}
             <div>
                 <Banner />
+            </div>
+
+            {/* NeedSomething */}
+            <div>
+                <NeedSomethingDone />
             </div>
 
             {/* jobs */}

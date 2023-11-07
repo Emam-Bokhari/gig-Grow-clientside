@@ -9,7 +9,7 @@ const Footer = () => {
             
 <div className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10" >
 
-<footer className="footer p-10 bg-[#e2e6ff]  text-[#2a2a2a]">
+<footer className="footer p-10 bg-[#e2e6ff]  text-[#2a2a2a] rounded-md">
   <nav>
     <header className="footer-title">Useful Links</header> 
     <Link to="/" className="link link-hover ">Home</Link> 
@@ -43,7 +43,7 @@ const Footer = () => {
 <footer className="footer px-10 py-4 border-t bg-[#e2e6ff]  text-[#2a2a2a]">
   <aside className="items-center grid-flow-col">
     <img className="w-24" src="https://i.ibb.co/xzzhBG9/default.png" alt="" />
-    <p className="text-lg font-medium" >GigGrow <br/>Hervest Success</p>
+    <p className="text-lg font-medium md:mt-6 md:ml-24" >GigGrow <br/>Hervest Success</p>
   </aside> 
   <nav className="md:place-self-center md:justify-self-end">
     <div className="grid grid-flow-col gap-4">
