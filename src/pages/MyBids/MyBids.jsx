@@ -24,17 +24,39 @@ const MyBids = () => {
         <div>
             {/* Navbar */}
             <div >
-            <Navbar />
+                <Navbar />
             </div>
 
-            <h2>My Bids</h2>
 
-            {bids.length > 0 ? <div>
+            <div className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10" >
+
+
+
+                {bids.length > 0 ? <div className="grid  grid-cols-5 bg-[#f2f3f3] text-[#7e858b] font-medium rounded text-center items-center overflow-x-scroll md:overflow-hidden gap-20 md:gap-0 " >
+
+                    <div className="py-3 px-6 ">
+                        <p >NO</p>
+                    </div>
+                    <div className="py-3 px-6">
+                        <p >Job Title</p>
+                    </div>
+
+                    <div >
+                        <p >Client Email</p>
+                    </div>
+                    <p className="py-3 px-6">Deadline</p>
+                    <p className="py-3 px-6">Status</p>
+                </div> : ""}
+
+
+                {bids.length > 0 ? <div>
                     {bids?.map((item, index) => <MyBidsTable key={index} data={item} index={index + 1} />)}
                 </div> : <div className="flex justify-center my-20 font-medium text-base md:text-lg" >
                     <h2>You have not bid on any job</h2>
                 </div>}
 
+
+            </div>
 
         </div>
     );
