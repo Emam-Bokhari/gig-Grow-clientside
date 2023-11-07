@@ -15,7 +15,7 @@ const Login = () => {
         const form = event.target
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password);
+        // console.log(email, password);
 
         // siginin with email and password
         signin(email, password)
@@ -29,7 +29,7 @@ const Login = () => {
         })
     }
 
-    // googleSignin
+    
     const handleGoogleSignin = () => {
         googleSignin()
             .then(() => {
@@ -91,7 +91,7 @@ const Login = () => {
                         {/* social signin */}
 
                         <div>
-                            <button onClick={handleGoogleSignin} className="w-full border-2 border-[#e5e5e5] rounded-md py-1 bg-white flex justify-center items-center gap-2 text-[#494949] font-bold text-[14px] cursor-pointer"> <div className="text-2xl" ><FcGoogle/></div> Sign in with google</button>
+                            <button onClick={handleGoogleSignin} className="w-full border-2 border-[#e5e5e5] rounded-md py-1 bg-white flex justify-center items-center gap-2 text-[#494949] font-bold text-[14px] cursor-pointer"> <div className="text-2xl" ><FcGoogle /></div> Sign in with google</button>
                         </div>
 
                         {/* signup */}

@@ -9,6 +9,7 @@ import Login from './../pages/Login/Login';
 import Register from './../pages/Register/Register';
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import JobDetails from "../pages/Home/JobDetails";
+import Update from "../pages/MyPostedJobs/Update/Update";
 
 const Router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/jobDetails/:id",
-                loader:({params})=>fetch(`http://localhost:3000/api/v1/${params.id}/job-details`),
+                loader: ({ params }) => fetch(`http://localhost:3000/api/v1/${params.id}/job-details`),
                 element: <JobDetails />
             },
             {
@@ -31,6 +32,11 @@ const Router = createBrowserRouter([
             {
                 path: "/myPostedJobs",
                 element: <MyPostedJobs />
+            },
+            {
+                path: "/update/:id",
+                loader: ({ params }) => fetch(`http://localhost:3000/api/v1/${params.id}/job-details`),
+                element: <Update />
             },
             {
                 path: "/bidRequest",
