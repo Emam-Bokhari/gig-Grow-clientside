@@ -3,6 +3,7 @@ import Navbar from "../../sharedComponents/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import MyPostedJobTable from "./MyPostedJobTable";
+import Footer from "../../sharedComponents/Navbar/Footer";
 
 
 const MyPostedJobs = () => {
@@ -65,6 +66,11 @@ const MyPostedJobs = () => {
                     <h2>You have not posted any jobs</h2>
                 </div>}
 
+            </div>
+
+            {/* footer */}
+            <div className="mt-[30vh]" >
+                <Footer/>
             </div>
 
 

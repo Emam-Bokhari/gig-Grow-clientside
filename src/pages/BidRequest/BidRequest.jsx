@@ -3,6 +3,7 @@ import Navbar from "../../sharedComponents/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import BidRequestTable from "./BidRequestTable";
+import Footer from "../../sharedComponents/Navbar/Footer";
 
 const BidRequest = () => {
     const {user}=useContext(AuthContext)
@@ -59,6 +60,10 @@ const BidRequest = () => {
 
 
 </div>
+
+<div className="mt-[30vh]" >
+                <Footer/>
+            </div>
 
 
         </div>

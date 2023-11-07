@@ -4,10 +4,11 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../sharedComponents/Navbar/Footer";
 
 const AddJob = () => {
     const { user } = useContext(AuthContext)
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const handleAddJob = (event) => {
         event.preventDefault()
@@ -27,14 +28,14 @@ const AddJob = () => {
 
         // console.log(addJob);
 
-        axios.post("http://localhost:3000/api/v1/add-job",addJob,{withCredentials:true})
-        .then(result=>{
-            // console.log(result.data);
-            if(result.data.insertedId){
-                toast.success('Job has been added successfully')
-                navigate("/myPostedJobs")
-            }
-        })
+        axios.post("http://localhost:3000/api/v1/add-job", addJob, { withCredentials: true })
+            .then(result => {
+                // console.log(result.data);
+                if (result.data.insertedId) {
+                    toast.success('Job has been added successfully')
+                    navigate("/myPostedJobs")
+                }
+            })
     }
     return (
         <div>
@@ -79,7 +80,7 @@ const AddJob = () => {
 
                             {/* deadline */}
                             <div className="flex-1" >
-                                <input className="bg-white w-full p-2 rounded-sm outline-none" type="date" name="deadline"  />
+                                <input className="bg-white w-full p-2 rounded-sm outline-none" type="date" name="deadline" />
                             </div>
                         </div>
 
@@ -110,6 +111,10 @@ const AddJob = () => {
                 </div>
 
 
+            </div>
+
+            <div>
+                <Footer />
             </div>
         </div>
     );

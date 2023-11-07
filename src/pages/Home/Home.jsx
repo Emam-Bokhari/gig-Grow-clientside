@@ -1,3 +1,4 @@
+import Footer from "../../sharedComponents/Navbar/Footer";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
 import Banner from "./Banner";
 import Jobs from "./Jobs";
@@ -19,6 +20,11 @@ const Home = () => {
             {/* jobs */}
             <div>
                 <Jobs />
+            </div>
+
+            {/* footer */}
+            <div>
+                <Footer />
             </div>
 
         </div>
