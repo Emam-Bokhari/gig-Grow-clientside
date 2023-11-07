@@ -1,13 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../sharedComponents/Navbar/Navbar";
-import {FcGoogle} from "react-icons/fc"
+// import {FcGoogle} from "react-icons/fc"
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const { signin, googleSignin } = useContext(AuthContext)
+    const { signin } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSignin = (event) => {
@@ -30,15 +30,15 @@ const Login = () => {
     }
 
     
-    const handleGoogleSignin = () => {
-        googleSignin()
-            .then(() => {
-                navigate("/")
-                return toast.success('Login Successful by Google')
+    // const handleGoogleSignin = () => {
+    //     googleSignin()
+    //         .then(() => {
+    //             navigate("/")
+    //             return toast.success('Login Successful by Google')
 
-            })
-            .catch()
-    }
+    //         })
+    //         .catch()
+    // }
 
     return (
         <div>
@@ -50,7 +50,7 @@ const Login = () => {
 
 
             <div className="flex justify-center mt-20 my-10 " >
-                <div className="bg-[#f4f1ff] w-[280px] h-[400px] rounded-lg p-4">
+                <div className="bg-[#f4f1ff] w-[280px] h-[370px] rounded-lg p-4">
                     <form onSubmit={handleSignin} className="space-y-2 my-5" >
                         <h2 className="text-lg font-bold text-[#2a2a2a]" >
                             Sign In
@@ -90,9 +90,9 @@ const Login = () => {
 
                         {/* social signin */}
 
-                        <div>
+                        {/* <div>
                             <button onClick={handleGoogleSignin} className="w-full border-2 border-[#e5e5e5] rounded-md py-1 bg-white flex justify-center items-center gap-2 text-[#494949] font-bold text-[14px] cursor-pointer"> <div className="text-2xl" ><FcGoogle /></div> Sign in with google</button>
-                        </div>
+                        </div> */}
 
                         {/* signup */}
                         <div className="text-center" >

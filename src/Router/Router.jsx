@@ -10,11 +10,13 @@ import Register from './../pages/Register/Register';
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import JobDetails from "../pages/Home/JobDetails";
 import Update from "../pages/MyPostedJobs/Update/Update";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -22,8 +24,8 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/jobDetails/:id",
-                loader: ({ params }) => fetch(`http://localhost:3000/api/v1/${params.id}/job-details`),
-                element:<PrivateRoute> <JobDetails /></PrivateRoute>
+                loader: ({ params }) => fetch(`http://localhost:3000/api/v1/${params.id}/job-details`,),
+                element: <PrivateRoute> <JobDetails /></PrivateRoute>
             },
             {
                 path: "/addJob",

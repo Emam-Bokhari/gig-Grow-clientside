@@ -17,8 +17,6 @@ const BidRequestTable = ({data,index}) => {
     <p className="bg-[#f6f8fa] text-[#2a2a2a] h-16 py-3 ">{jobTitle}</p>
 
 
-
-
     <p className="bg-[#f6f8fa] text-[#2a2a2a] h-16 py-4">{biddingEmail}</p>
 
    

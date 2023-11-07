@@ -12,7 +12,7 @@ const BidRequest = () => {
     const url = `http://localhost:3000/api/v1/bid-request?clientEmail=${user?.email}`
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
             .then(res => {
                 console.log(res.data);
                 setBidRequest(res.data)

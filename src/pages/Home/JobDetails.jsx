@@ -26,7 +26,7 @@ const JobDetails = () => {
         // console.log(placeYourBidData);
         form.reset()
 
-        axios.post("http://localhost:3000/api/v1/bid-on-the-project",placeYourBidData)
+        axios.post("http://localhost:3000/api/v1/bid-on-the-project",placeYourBidData,{withCredentials:true})
         .then(result=>{
             // console.log(result.data);
             if(result.data.insertedId){

@@ -11,7 +11,7 @@ const MyBids = () => {
     const url = `http://localhost:3000/api/v1/my-bids?biddingEmail=${user?.email}`
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
             .then(res => {
                 // console.log(res.data);
                 setBids(res.data)

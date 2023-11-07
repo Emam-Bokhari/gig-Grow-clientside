@@ -27,7 +27,7 @@ const AddJob = () => {
 
         // console.log(addJob);
 
-        axios.post("http://localhost:3000/api/v1/add-job",addJob)
+        axios.post("http://localhost:3000/api/v1/add-job",addJob,{withCredentials:true})
         .then(result=>{
             // console.log(result.data);
             if(result.data.insertedId){
