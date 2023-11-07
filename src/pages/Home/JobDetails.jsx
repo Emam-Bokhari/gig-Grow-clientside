@@ -19,9 +19,10 @@ const JobDetails = () => {
         const biddingEmail=form.biddingEmail.value 
         const amount=form.amount.value 
         const deadline=form.deadline.value 
+        const jobTitle=form.jobTitle.value 
         // console.log(clientEmail,biddingEmail,amount,deadline);
 
-        const placeYourBidData={clientEmail,biddingEmail,amount,deadline}
+        const placeYourBidData={clientEmail,biddingEmail,amount,deadline,jobTitle}
         // console.log(placeYourBidData);
         form.reset()
 
@@ -68,6 +69,21 @@ const JobDetails = () => {
                     <div className="bg-[#f4f1ff] p-6  my-10" >
 
                         <form onSubmit={handlePlaceYourBid} >
+
+
+                        <div className="flex flex-col md:flex-row my-5 " >
+                                {/* job title */}
+                                <div className="flex-1" >
+                                    <p className="text-[#2a2a2a] text-base font-medium">Job Title:</p>
+                                    <input className="bg-white p-2 rounded-sm w-full outline-none" type="text" name="jobTitle" placeholder="Job Title" defaultValue={jobTitle} readOnly />
+                                </div>
+
+                                
+
+                            </div>
+
+
+
                             <div className="flex flex-col md:flex-row gap-5 my-5 " >
                                 {/* email */}
                                 <div className="flex-1" >
