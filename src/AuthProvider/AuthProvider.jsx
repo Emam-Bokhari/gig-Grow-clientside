@@ -43,7 +43,7 @@ const AuthProvider = ({children}) => {
             const loggedUser={email:userEmail}
             setUser(currentUser)
             if(currentUser){
-                axios.post("http://localhost:3000/jwt",loggedUser,{withCredentials:true})
+                axios.post("https://gig-grow-serverside.vercel.app/jwt",loggedUser,{withCredentials:true})
                 .then(result=>{
                     console.log(result.data);
                 })

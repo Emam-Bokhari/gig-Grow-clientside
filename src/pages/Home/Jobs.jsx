@@ -5,7 +5,7 @@ const Jobs = () => {
     const data = useQuery({
         queryKey: ['job'],
         queryFn: async () => {
-            const jobsData = await fetch("http://localhost:3000/api/v1/job-category")
+            const jobsData = await fetch("https://gig-grow-serverside.vercel.app/api/v1/job-category")
             return await jobsData.json()
         }
     })

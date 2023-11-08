@@ -23,7 +23,7 @@ const MyPostedJobTable = ({ data, index,handleDeletePostedJob }) => {
             if (result.isConfirmed) {
 
 
-                axios.delete(`http://localhost:3000/api/v1/${_id}/delete-posted-job`)
+                axios.delete(`https://gig-grow-serverside.vercel.app/api/v1/${_id}/delete-posted-job`)
                 .then(result=>{
                     console.log(result.data);
 
