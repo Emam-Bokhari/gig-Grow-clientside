@@ -27,7 +27,7 @@ const JobDetails = () => {
         // console.log(placeYourBidData);
         form.reset()
 
-        axios.post("http://localhost:5000/api/v1/bid-on-the-project",placeYourBidData,{withCredentials:true})
+        axios.post("https://gig-grow-serverside.vercel.app/api/v1/bid-on-the-project",placeYourBidData,{withCredentials:true})
         .then(result=>{
             // console.log(result.data);
             if(result.data.insertedId){

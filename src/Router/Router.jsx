@@ -24,7 +24,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/jobDetails/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/${params.id}/job-details`,),
+                loader: ({ params }) => fetch(`https://gig-grow-serverside.vercel.app/api/v1/${params.id}/job-details`,),
                 element: <PrivateRoute> <JobDetails /></PrivateRoute>
             },
             {
@@ -37,7 +37,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/${params.id}/job-details`),
+                loader: ({ params }) => fetch(`https://gig-grow-serverside.vercel.app/api/v1/${params.id}/job-details`),
                 element: <PrivateRoute><Update /></PrivateRoute>
             },
             {

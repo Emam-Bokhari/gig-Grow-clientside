@@ -28,7 +28,7 @@ const AddJob = () => {
 
         // console.log(addJob);
 
-        axios.post("http://localhost:5000/api/v1/add-job", addJob, { withCredentials: true })
+        axios.post("https://gig-grow-serverside.vercel.app/api/v1/add-job", addJob, { withCredentials: true })
             .then(result => {
                 // console.log(result.data);
                 if (result.data.insertedId) {

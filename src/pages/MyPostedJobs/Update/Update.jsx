@@ -26,7 +26,7 @@ const Update = () => {
 
 
 
-        axios.patch(`http://localhost:5000/api/v1/${_id}/update-posted-job`, updatePostedJob)
+        axios.patch(`https://gig-grow-serverside.vercel.app/api/v1/${_id}/update-posted-job`, updatePostedJob)
             .then(result => {
                 console.log(result.data);
                 if (result.data.modifiedCount > 0) {
