@@ -2,15 +2,16 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../../sharedComponents/Navbar/Navbar";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Footer from './../../../sharedComponents/Navbar/Footer';
 
 const Update = () => {
     const updatePostedJobData = useLoaderData()
     // console.log(updatePostedJobData);
-const navigate=useNavigate()
-    const {_id,email,jobTitle,category,deadline,minimumPrice,maximumPrice,description}=updatePostedJobData||{}
+    const navigate = useNavigate()
+    const { _id, email, jobTitle, category, deadline, minimumPrice, maximumPrice, description } = updatePostedJobData || {}
 
 
-    const handleUpdatePostedJob=(event)=>{
+    const handleUpdatePostedJob = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value
@@ -23,16 +24,16 @@ const navigate=useNavigate()
 
         const updatePostedJob = { email, jobTitle, category, deadline, minimumPrice, maximumPrice, description }
 
-      
 
-        axios.patch(`https://gig-grow-serverside.vercel.app/api/v1/${_id}/update-posted-job`,updatePostedJob)
-        .then(result=>{
-            console.log(result.data);
-            if(result.data.modifiedCount>0){
-                toast.success('Updated Successfully!')
-                navigate("/myPostedJobs")
-            }
-        })
+
+        axios.patch(`http://localhost:5000/api/v1/${_id}/update-posted-job`, updatePostedJob)
+            .then(result => {
+                console.log(result.data);
+                if (result.data.modifiedCount > 0) {
+                    toast.success('Updated Successfully!')
+                    navigate("/myPostedJobs")
+                }
+            })
 
     }
 
@@ -45,7 +46,7 @@ const navigate=useNavigate()
                 <Navbar />
             </div>
 
-            <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
+            <div  className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10 rounded-md" >
 
 
 
@@ -75,7 +76,13 @@ const navigate=useNavigate()
                         <div className="flex flex-col md:flex-row  gap-5 my-5" >
                             <div className="flex-1" >
                                 {/* category */}
-                                <input className="bg-white w-full p-2 rounded-sm outline-none" type="text" name="category" placeholder="Category" defaultValue={category}/>
+                                {/* <input className="bg-white w-full p-2 rounded-sm outline-none" type="text" name="category" placeholder="Category" defaultValue={category}/> */}
+                                <select className="bg-white w-full p-2 rounded-sm outline-none" name="category" >
+                                    <option value="" defaultValue={category}>Select Category</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                </select>
                             </div>
 
                             {/* deadline */}
@@ -88,7 +95,7 @@ const navigate=useNavigate()
                         <div className="flex flex-col md:flex-row  gap-5 my-5" >
                             {/* minimum price */}
                             <div className="flex-1" >
-                                <input className="bg-white p-2 rounded-sm w-full outline-none" type="number" name="minimumPrice" placeholder="Minimum Price" defaultValue={minimumPrice}/>
+                                <input className="bg-white p-2 rounded-sm w-full outline-none" type="number" name="minimumPrice" placeholder="Minimum Price" defaultValue={minimumPrice} />
                             </div>
                             {/* maximum price */}
                             <div className="flex-1" >
@@ -110,8 +117,15 @@ const navigate=useNavigate()
 
                 </div>
 
+               
+
 
             </div>
+
+             {/* footer */}
+             <div>
+                    <Footer />
+                </div>
 
 
         </div>

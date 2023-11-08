@@ -10,7 +10,7 @@ const MyPostedJobs = () => {
     const { user } = useContext(AuthContext)
     const [myPostedJobs, setMyPostedJobs] = useState([])
 
-    const url = `https://gig-grow-serverside.vercel.app/api/v1/my-posted-jobs?email=${user?.email}`
+    const url = `http://localhost:5000/api/v1/my-posted-jobs?email=${user?.email}`
 
     useEffect(() => {
         axios.get(url,{withCredentials:true})

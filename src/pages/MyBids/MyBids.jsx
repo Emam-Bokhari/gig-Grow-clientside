@@ -9,7 +9,7 @@ const MyBids = () => {
     const { user } = useContext(AuthContext)
     const [bids, setBids] = useState([])
 
-    const url = `https://gig-grow-serverside.vercel.app/api/v1/my-bids?biddingEmail=${user?.email}`
+    const url = `http://localhost:5000/api/v1/my-bids?biddingEmail=${user?.email}`
 
     useEffect(() => {
         axios.get(url,{withCredentials:true})

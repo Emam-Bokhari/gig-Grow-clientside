@@ -28,7 +28,7 @@ const AddJob = () => {
 
         // console.log(addJob);
 
-        axios.post("https://gig-grow-serverside.vercel.app/api/v1/add-job", addJob, { withCredentials: true })
+        axios.post("http://localhost:5000/api/v1/add-job", addJob, { withCredentials: true })
             .then(result => {
                 // console.log(result.data);
                 if (result.data.insertedId) {
@@ -45,7 +45,7 @@ const AddJob = () => {
                 <Navbar />
             </div>
 
-            <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
+            <div className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10" >
 
 
 
@@ -54,7 +54,7 @@ const AddJob = () => {
 
 
 
-                <div className="bg-[#f4f1ff] p-6  my-5" >
+                <div className="bg-[#f4f1ff] p-6  my-5 rounded-md" >
 
                     <form onSubmit={handleAddJob} >
                         {/* email and job title */}
@@ -75,7 +75,13 @@ const AddJob = () => {
                         <div className="flex flex-col md:flex-row  gap-5 my-5" >
                             <div className="flex-1" >
                                 {/* category */}
-                                <input className="bg-white w-full p-2 rounded-sm outline-none" type="text" name="category" placeholder="Category" />
+
+                                <select className="bg-white w-full p-2 rounded-sm outline-none" name="category" >
+                                    <option value="">Select Category</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                </select>
                             </div>
 
                             {/* deadline */}

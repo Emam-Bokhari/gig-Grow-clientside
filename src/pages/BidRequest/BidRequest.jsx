@@ -10,7 +10,7 @@ const BidRequest = () => {
 
     const [bidRequest, setBidRequest] = useState([])
 
-    const url = `https://gig-grow-serverside.vercel.app/api/v1/bid-request?clientEmail=${user?.email}`
+    const url = `http://localhost:5000/api/v1/bid-request?clientEmail=${user?.email}`
 
     useEffect(() => {
         axios.get(url,{withCredentials:true})
