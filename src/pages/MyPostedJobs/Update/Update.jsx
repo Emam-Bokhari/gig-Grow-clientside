@@ -3,6 +3,7 @@ import Navbar from "../../../sharedComponents/Navbar/Navbar";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Footer from './../../../sharedComponents/Navbar/Footer';
+import PageTitle from "../../../sharedComponents/PageTitle";
 
 const Update = () => {
     const updatePostedJobData = useLoaderData()
@@ -39,6 +40,9 @@ const Update = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="Update Job" />
 
 
             {/* Navbar */}

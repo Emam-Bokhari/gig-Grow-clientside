@@ -5,6 +5,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Footer from "../../sharedComponents/Navbar/Footer";
+import PageTitle from "../../sharedComponents/PageTitle";
 
 const JobDetails = () => {
     const jobDetailsData = useLoaderData()
@@ -40,6 +41,9 @@ const JobDetails = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="Job Details" />
 
             {/* Navbar */}
             <div>

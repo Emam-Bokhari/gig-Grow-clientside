@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc"
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import PageTitle from "../../sharedComponents/PageTitle";
 const Register = () => {
 
     const { createUser,googleSignin  } = useContext(AuthContext)
@@ -58,6 +59,9 @@ const Register = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="Register" />
             {/* Navbar */}
             <div  >
                 <Navbar />

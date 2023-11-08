@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import MyPostedJobTable from "./MyPostedJobTable";
 import Footer from "../../sharedComponents/Navbar/Footer";
+import PageTitle from "../../sharedComponents/PageTitle";
 
 
 const MyPostedJobs = () => {
@@ -30,6 +31,9 @@ const MyPostedJobs = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="My Posted Job" />
             {/* Navbar */}
             <div  >
                 <Navbar />

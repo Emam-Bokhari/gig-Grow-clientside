@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../sharedComponents/Navbar/Footer";
+import PageTitle from './../../sharedComponents/PageTitle';
 
 const AddJob = () => {
     const { user } = useContext(AuthContext)
@@ -39,6 +40,9 @@ const AddJob = () => {
     }
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="Add Job" />
 
             {/* Navbar */}
             <div  >

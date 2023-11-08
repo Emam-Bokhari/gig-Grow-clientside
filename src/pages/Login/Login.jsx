@@ -4,6 +4,7 @@ import Navbar from "../../sharedComponents/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import PageTitle from "../../sharedComponents/PageTitle";
 
 const Login = () => {
 
@@ -42,6 +43,11 @@ const Login = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="Login" />
+
+
             {/* Navbar */}
             <div >
                 <Navbar />

@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import MyBidsTable from "./MyBidsTable";
 import Footer from "../../sharedComponents/Navbar/Footer";
+import PageTitle from "../../sharedComponents/PageTitle";
 
 const MyBids = () => {
     const { user } = useContext(AuthContext)
@@ -23,6 +24,9 @@ const MyBids = () => {
 
     return (
         <div>
+
+            {/* pageTitle */}
+            <PageTitle title="My Bids" />
             {/* Navbar */}
             <div >
                 <Navbar />

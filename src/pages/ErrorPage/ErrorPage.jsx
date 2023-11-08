@@ -2,10 +2,15 @@ import Lottie from "lottie-react";
 import Errorpage from "../../../public/error-animation.json"
 import {AiOutlineHome} from "react-icons/ai"
 import { Link } from "react-router-dom";
+import PageTitle from "../../sharedComponents/PageTitle";
 
 const ErrorPage = () => {
     return (
         <div>
+
+
+            {/* pageTitle */}
+            <PageTitle title="Error Page" />
 
             <div className="max-w-screen-2xl mx-auto px-8 md:px-16 lg:px-32 my-10" >
 
