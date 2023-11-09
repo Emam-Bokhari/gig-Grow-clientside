@@ -13,6 +13,9 @@ const Home = () => {
 
             {/* pageTitle */}
             <PageTitle title="Home" />
+
+
+            
             {/* Navbar */}
             <div >
                 

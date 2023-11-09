@@ -23,6 +23,30 @@ const BidRequest = () => {
 
     console.log(bidRequest);
 
+    const handleUpdateStatus=(id,statusNew)=>{
+        fetch(`https://gig-grow-serverside.vercel.app/api/v1/${id}/update-status`,{
+            method:'PATCH',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({status:statusNew})
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.modifiedCount>0){
+                console.log('status updated');
+
+                const remaining=bidRequest.filter(status=>status._id!==id)
+                const updated=bidRequest.find(status=>status._id===id)
+                updated.status=statusNew
+                const newStatus=[updated,...remaining]
+                setBidRequest(newStatus)
+            }
+        })
+    }
+
+
     return (
         <div>
 
@@ -40,7 +64,7 @@ const BidRequest = () => {
 
 
 
-                {bidRequest.length > 0 ? <div className="grid  grid-cols-6 bg-[#f2f3f3] text-[#7e858b] font-medium rounded text-center items-center overflow-x-scroll md:overflow-hidden gap-20 md:gap-0 " >
+                {bidRequest.length > 0 ? <div className="grid  grid-cols-7 bg-[#f2f3f3] text-[#7e858b] font-medium rounded text-center items-center overflow-x-scroll md:overflow-hidden gap-20 md:gap-0 " >
 
                     <div className="py-3 px-6 ">
                         <p >NO</p>
@@ -59,7 +83,7 @@ const BidRequest = () => {
 
 
                 {bidRequest.length > 0 ? <div>
-                    {bidRequest?.map((item, index) => <BidRequestTable key={index} data={item} index={index + 1} />)}
+                    {bidRequest?.map((item, index) => <BidRequestTable key={index} data={item} index={index + 1} handleUpdateStatus={handleUpdateStatus} />)}
                 </div> : <div className="flex justify-center my-20 font-medium text-base md:text-lg" >
                     <h2>You have not bid request</h2>
                 </div>}
